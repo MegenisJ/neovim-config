@@ -4,7 +4,8 @@ return {
     config = function ()
         require('lualine').setup({
         options = {
-            globalstatus=true
+            globalstatus=true,
+            theme='papercolor_light'
         }})
     end
 }

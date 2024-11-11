@@ -1,18 +1,22 @@
 return {
-  -- add gruvbox
-  {
-    "ellison/gruvbox.nvim",
-    config = true,
-    opts = {
-        transparent_mode = true,
-    },
-  },
+  'olivercederborg/poimandres.nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require('poimandres').setup {
+      -- leave this setup function empty for default config
+      -- or refer to the configuration section
+      -- for configuration options
+    }
+  end,
 
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  },
+  -- optionally set the colorscheme within lazy config
+  init = function()
+    vim.cmd("colorscheme poimandres")
+  end
 }
+--return {
+--    --"rose-pine/neovim",
+--    "olivercederborg/poimandres.nvim",
+--    priority = 1000
+--}

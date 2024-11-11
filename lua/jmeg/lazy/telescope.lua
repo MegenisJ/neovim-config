@@ -8,7 +8,24 @@ return {
     },
 
     config = function()
-        require('telescope').setup({})
+        require('telescope').setup({
+            defaults = {
+                layout_config = {
+                    vertical = { width = 0.5 }
+                    -- other layout configuration here
+                },
+                file_ignore_patterns = {
+                    "node_modules",
+                    ".git",
+                    "%_templ.go"
+                }
+            },
+            pickers = {
+                find_files = {
+                    theme = "dropdown",
+                }
+            }
+        })
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
